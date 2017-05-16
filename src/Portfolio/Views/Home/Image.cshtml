@@ -1,0 +1,17 @@
+﻿@model Portfolio.Models.ImgOfProject
+
+@{
+    ViewBag.Title = "Zdjęcie";
+}
+
+<div class="row">
+    <div class="col-md-12">ot id @Model.ProjectId
+        <img src="/Images/@Model.ImgName" name="Karol Karpierz projekt" class="img-rounded" 
+             style="max-height: 100%; max-width: 100%;" />
+    </div>
+    <div class="col-md-12">
+        <a class="btn btn-default" href="@Url.Action("Detail", new { id = Model.ProjectId })">
+        &laquo; Wróć
+        </a>
+    </div>
+</div>

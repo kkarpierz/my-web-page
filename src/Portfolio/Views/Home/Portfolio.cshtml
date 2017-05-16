@@ -1,0 +1,35 @@
+﻿@model Portfolio.Models.ProjectTask[]
+@{
+    ViewBag.Title = "Portfolio";
+}
+
+<style type="text/css">
+    .taskDescription {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+
+
+<div class="jumbotron">
+    <h1>@ViewBag.Title</h1>
+    <p class="lead">I'm c# developer. So far I've done some projects in c++ and web pages. I like c#, .net, html.<br/>
+    I'm commercial experienced and I'm studying at uni (last few months). Email me on k.karpierz[dot]mail[at]gmail.com</p>
+    <p><a href="#mainContainer" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+
+<div class="row" id="mainContainer">
+    @foreach (var task in Model) {
+    <div class="col-md-4">
+        <h2>@task.Name</h2>
+        <p class="taskDescription">@task.Description</p>
+        <p><a class="btn btn-default" href="@Url.Action("Detail", new { id = task.Id })">Więcej &raquo;</a></p>
+    </div>
+    }
+</div>
+
+
