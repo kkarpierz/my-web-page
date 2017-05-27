@@ -1,7 +1,120 @@
 ﻿@{
     ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+    ViewBag.Tech = new[]{ "C#", "HTML", "CSS", "JQUERY", "SQL", "ASP.NET", "C++", "ANGULAR JS", "JAVA", "C" };//todo: in controller
+    ViewBag.TechPerc = new[] { 90, 100, 90, 50, 90, 80, 75, 40, 40, 70 };
+ }
 
-<p>Use this area to provide additional information.</p>
+<style type="text/css">
+    div div.col-md-3, div.col-md-12{
+        text-align: center;
+    }
+
+</style>
+<link rel="stylesheet" type="text/css" href="~/Content/pie.css" />
+
+
+<div class="jumbotron">
+    <h1>Umiejętności</h1>
+    <p class="lead">
+        Odkryj moją wiedzę, kwalifikacje, doświadczenie w przemyśle oraz to co potrafię.
+    </p>
+    <!--<p><a href="  Ur l.Action("Portfolio")" class="btn btn-primary btn-lg">Przeglądaj projekty &raquo;</a></p>-->
+</div>
+
+
+
+<div class="row">
+    <div class="col-md-12"><h3>Kwalifikacje</h3></div>
+    @for (int i = 0; i < ViewBag.Tech.Length; i++) {
+    <div class="col-md-3">
+        <div class="arc-container">
+            <div class="arc-overlay" style="text-align: left;">
+                @ViewBag.TechPerc[i]%
+            </div>
+            <div class="arc-wrapper">
+                <div class="arc2"></div>
+                <div class="arc1"></div>
+            </div>
+        </div>
+        <h5>@ViewBag.Tech[i]</h5>
+    </div>
+    }
+    
+</div>
+
+<div class="col-md-12" style="height: 50px;"><br /></div>
+
+<div class="row" style="background-color: #eeeeee;" id="experience">
+    <div class="col-md-12" style="padding-top: 20px;padding-bottom: 70px;"><h3>Doświadczenie zawodowe</h3></div>
+
+    <div class="col-md-12">
+        <div class="col-md-6" style="vertical-align: middle; text-align: center; letter-spacing: 3px; padding-bottom: 15px;"><h4>Woodward</h4></div>
+        <div class="col-md-6" style="text-align: justify;">
+            <h4  style="padding-bottom: 10px;">Inżynier ds. Oprogramowania staż</h4>
+            <h6  style="padding-bottom: 10px;"><i>2015-04 - 2016-10</i></h6>
+            <p style="line-height: 1.5; padding-bottom: 50px; margin-right: 5%;">
+                Tworzenie i rozbudowywanie modułów aplikacji opartej na technologiach C# i SQL. Implementacja interfejsu webowego (ASP.NET). 
+                Zarządzenie bazą danych komponentów elektronicznych. 
+            </p>
+        </div>
+    </div>
+    
+    <div class="col-md-12">
+        <div class="col-md-6" style="vertical-align: middle; text-align: center; letter-spacing: 3px;"><h4>TK Capital</h4></div>
+        <div class="col-md-6" style="text-align: justify;">
+            <h4 style="padding-bottom: 10px;">Twórca stron internetowych</h4>
+            <h6 style="padding-bottom: 10px;"><i>2014-07 - 2014-08</i></h6>
+            <p style="line-height: 1.5; padding-bottom: 50px; margin-right: 5%;">
+                Założenie strony internetowej, projekt i rozbudowanie. Wygląd witryny oraz logika w oparciu o XHTML, Wordpress.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-6" style="vertical-align: middle; text-align: center; letter-spacing: 3px;"><h4>Alarm System</h4></div>
+        <div class="col-md-6" style="text-align: justify;">
+            <h4 style="padding-bottom: 10px;">Wsparcie techniczne</h4>
+            <h6 style="padding-bottom: 10px;"><i>2013-07 - 2013-08</i></h6>
+            <p style="line-height: 1.5; padding-bottom: 50px; margin-right: 5%;">
+                Montaż elementów telewizji przemysłowej CCTV. Rozbudowa instalacji automatyki domowej.
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="row">
+    <div class="col-md-12" style="padding-top: 20px; padding-bottom: 70px; text-align: left;"><h3>Wykształcenie</h3></div>
+    <div class="row">
+        <div class="col-md-12">
+            @*<div class="col-md-6" style="vertical-align: middle; text-align: center; letter-spacing: 3px; padding-bottom: 15px;"><h4>Woodward</h4></div>*@
+            <div class="col-md-6" style="text-align: justify;">
+                <h4 style="padding-bottom: 10px;">Akademia Górniczo-Hutnicza</h4>
+                <h5 style="padding-bottom: 10px;"><i>Elektronika i Telekomunikacja drugi stopień, 2016 - obecnie</i></h5>
+                <p style="line-height: 1.5; padding-bottom: 50px; margin-right: 5%;"><br/></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @*<div class="col-md-6" style="vertical-align: middle; text-align: center; letter-spacing: 3px; padding-bottom: 15px;"><h4>Woodward</h4></div>*@
+            <div class="col-md-6" style="text-align: justify;">
+                <h4 style="padding-bottom: 10px;">Inżynier Elektroniki i Telekomunikacji</h4>
+                <h5 style="padding-bottom: 10px;"><i>Akademia Górniczo-Hutnicza, 2012-2016</i></h5>
+                <p style="line-height: 1.5; padding-bottom: 50px; margin-right: 5%;">Praca dypomowa: "Rejestrator parametrów eksploatacyjnych pojazdu"</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="jumbotron">
+    <p class="lead">
+        Karol Karpierz
+    </p>
+    <p><a href="@Url.Action("Contact")" class="btn btn-primary btn-lg">Skontaktuj się ze mną &raquo;</a></p>
+</div>
+

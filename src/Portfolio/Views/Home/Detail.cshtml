@@ -14,12 +14,14 @@
     <div class="col-md-4">
         <div class="row">
             <div class="col-md-6">
+                <b>
                 @if (Model.TechnologiesUsed.Length == 1) {
                    <text>Technologia: </text>
                 }
                 else if (Model.TechnologiesUsed.Length > 1) {
                    <text>Technologie: </text>
                 }
+                </b>
             </div>
             <div class="col-md-6">
                 @foreach (var tech in Model.TechnologiesUsedName) {
@@ -27,13 +29,13 @@
                 }
             </div>
         </div>
-        <p>@Model.CommercialTxt</p>
-        <div class="row"><div class="col-md-6">Data realizacji:</div><div class="col-md-6">@Model.EndDateTxt</div></div>
+        <p><i>@Model.CommercialTxt</i></p>
+        <div class="row"><div class="col-md-6"><b>Data realizacji:</b></div><div class="col-md-6">@Model.EndDateTxt</div></div>
         <p><br/></p>
     </div>
     <div class="col-md-8">
         @foreach (var img in Model.ImageFiles) {
-            <div class="col-md-4" style="padding: 2px;">
+            <div class="col-md-6" style="padding: 2px;">
                 <a href="@Url.Action("Image", new { id = Model.Id, imageName = img })">
                     <img src="/Images/@img" alt="@Model.Name" style="max-height: 100%; max-width: 100%;" class="img-rounded" />
                 </a>
